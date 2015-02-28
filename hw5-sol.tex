@@ -1,0 +1,568 @@
+\documentclass[11pt]{article}
+\usepackage{color, epsfig, latexsym}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue, 
+            citecolor=blue, urlcolor=blue]{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage[retainorgcmds]{IEEEtrantools}
+
+\renewcommand{\baselinestretch}{1}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\textheight}{3cm}
+\addtolength{\textwidth}{4cm}
+\setlength{\parskip}{0.3cm}
+\setlength{\parindent}{0cm}
+
+%\usepackage{../../templates/jointhomework}
+
+
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+
+\newcommand{\bnum}{\begin{enumerate}}
+\newcommand{\enum}{\end{enumerate}}
+
+\newcommand{\beq}{\begin{eqnarray*}}
+\newcommand{\eeq}{\end{eqnarray*}}
+
+\newcommand{\beqn}{\begin{eqnarray}}
+\newcommand{\eeqn}{\end{eqnarray}}
+
+\newcommand{\key}[1]{\textbf{#1}}
+
+\newcommand{\p}{\mbox{P}}
+
+
+
+\def\btheta{\mbox{\boldmath $\theta$}}
+\def\bmu{\mbox{\boldmath $\mu$}}
+\def\bgam{\mbox{\boldmath $\gamma$}}
+\def\bsig{\mbox{\boldmath $\sigma$}}
+\def\bomega{\mbox{\boldmath $\omega$}}
+\def\bdeta{\mbox{\boldmath $\eta$}}
+\def\bpi{\mbox{\boldmath $\pi$}}
+\def\bbeta{\mbox{\boldmath $\beta$}}
+
+\newcommand{\bY}{\mbox{\boldmath $Y$}}
+\newcommand{\by}{\mbox{\boldmath $y$}}
+
+\newcommand{\bI}{\mbox{\boldmath $I$}}
+
+\newcommand{\bX}{\mbox{\boldmath $X$}}
+
+\newcommand{\bx}{\mbox{\boldmath $x$}}
+\newcommand{\bn}{\mbox{\boldmath $n$}}
+\newcommand{\bN}{\mbox{\boldmath $N$}}
+\newcommand{\bc}{\mbox{\boldmath $c$}}
+\newcommand{\bd}{\mbox{\boldmath $d$}}
+\newcommand{\tbc}{\widetilde{\mbox{\boldmath $c$}}}
+\newcommand{\bchat}{\widehat{\mbox{\boldmath $c$}}}
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bL}{\mbox{\boldmath $L$}}
+\newcommand{\bM}{\mbox{\boldmath $M$}}
+\newcommand{\bz}{\mbox{\boldmath $z$}}
+\newcommand{\bell}{\mbox{\boldmath $\ell$}}
+%\renewcommand {\bpi} {\mbox{\boldmath $\pi$}}
+\newcommand{\No} {\text{N}}
+\newcommand {\bg} {\mbox{\boldmath $g$}}
+\newcommand{\Bern} {\text{Bern}}
+
+\newcommand{\Exp} {\text{E}}
+\newcommand{\Cov} {\text{Cov}}
+
+\newcommand{\bV}{\mbox{\boldmath $V$}}
+\newcommand{\bv}{\mbox{\boldmath $v$}}
+\newcommand{\brr}{\mbox{\boldmath $r$}}
+\newcommand {\bh} {\mbox{\boldmath $h$}}
+
+\newcommand{\bw}{\mbox{\boldmath $w$}}
+\newcommand{\bp}{\mbox{\boldmath $p$}}
+\newcommand{\btau}{\bm{\tau}}
+\newcommand{\bnu}{\bm{\nu}}
+\newcommand{\Sbar}{\overline{S}}
+\newcommand{\Var} {\text{Var}}
+
+\newcommand{\Ga}{\mbox{Gamma}}
+\newcommand{\IG}{\mbox{IG}}
+\newcommand{\Dir}{\mbox{Dir}}
+\newcommand{\Ber}{\mbox{Ber}}
+\newcommand{\Be}{\mbox{Be}}
+\newcommand{\Unif}{\mbox{Unif}}
+\newcommand{\Nor}{\mbox{N}}
+\newcommand{\Binom}{\mbox{Bin}}
+\newcommand{\Multi}{\mbox{Multinomial}}
+\newcommand{\Pa}{\mbox{Pa}}
+\newcommand{\NB}{\mbox{NB}}
+
+
+\newcommand{\Gprime}{G^\prime}
+\newcommand{\Normal}{\mathrm{N}}
+\newcommand{\Poi}{\mathrm{Poi}}
+
+
+
+\renewcommand{\th}{\theta}
+\newcommand{\thstar}{\theta^\star}
+\newcommand{\sig}{\sigma}
+\newcommand{\sigsq}{\sig^2}
+
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\indep}{\stackrel{indep}{\sim}}
+
+
+
+\begin{document}
+% ===========================================================================
+
+%\classheader
+\section*{Winter 15 -- AMS206B Homework 5}
+
+\textbf{Due at the {\em beginning of class}, Tuesday March. 3rd }.
+
+\noindent
+%\textbf{This hw includes more questions on the topics covered in the previous two hws.  These questions will give you more chance to practice the concepts in different settings.}
+
+
+\bnum
+
+\item %#1
+\begin{enumerate}
+\item %#1-a
+\item %#1-b
+\begin{enumerate}
+\item 
+\item 
+\end{enumerate}
+\end{enumerate}
+
+\item %#2
+\bnum
+\item %#2-a 
+\item %#2-b
+\enum
+
+\item %#3
+\bnum
+\item %#3-a
+We begin by finding the joint posterior density of $\theta$ and $\sigma^2$.
+  \begin{align*}
+    \operatorname{\pi}(\theta, \sigma^2 | \mathbf{x}) 
+      \propto &
+        \operatorname{\pi}(\theta, \sigma^2)
+        \operatorname{f}(\mathbf{x}|\theta, \sigma^2) \\ 
+      = & 
+        \operatorname{\pi_1}(\theta | \sigma^2)
+        \operatorname{\pi_2}(\sigma^2)
+        \operatorname{f}(\mathbf{x}|\theta, \sigma^2) \\
+      = & 
+        \left[ \frac{1}{\sqrt{2\pi\tau\sigma^2}} \exp\left\{ \frac{-(\theta - \mu)^2}{2\tau\sigma^2} \right\} \right]
+          \left[
+            \frac{1}{\Gamma(\alpha) \beta^\alpha (\sigma^2)^{\alpha+1}} 
+            \exp\left\{ \frac{-1}{\sigma^2\beta} \right\}
+            \mathbb{I}(\sigma^2>0)
+          \right] \\
+      & \times
+        \left[
+          \left( \frac{1}{\sqrt{2\pi\sigma^2} } \right)^n
+          \exp\left\{ \frac{-\sum_{i=1}^n (x_i - \theta)^2 }{2\sigma^2} \right\}
+        \right] \\
+      \intertext{Collect the $\theta$ terms:}        
+      = & 
+        \frac{1}{\sqrt{2\pi\tau\sigma^2}}
+          \exp\left\{
+            \frac{-(1 + n\tau)}{2\tau\sigma^2}
+            \left( \theta^2 - 2\theta(\mu + \tau n \bar{x})(1 + n\tau)^{-1} \right)
+          \right\} \\
+      & \times
+        \frac{1}{\Gamma(\alpha) \beta^\alpha (\sigma^2)^{\alpha+1}}
+        \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n
+        \exp \left\{
+          \frac{-1}{\sigma^2} \left( \frac{\mu^2}{2\tau} + \frac{1}{\beta} + \frac{\sum_{i=1}^{n} x_i^2}{2} \right)
+        \right\}
+        \mathbb{I}(\sigma^2>0) \\
+      \intertext{And complete the square for the $\theta$ terms in the exponential:}
+      = &
+        \frac{1}{\sqrt{2\pi\tau\sigma^2}}
+          \exp\left\{
+            \frac{-(1 + n\tau)}{2\tau\sigma^2}
+            \left[
+              \left(\theta - (\mu+\tau n \bar{x})(1+n\tau)^{-1}\right)^2 - \left((\mu+\tau n \bar{x})(1+n \tau)^{-1}\right)^2
+            \right]
+          \right\} \\
+      & \times
+        \frac{1}{\Gamma(\alpha) \beta^\alpha (\sigma^2)^{\alpha+1}}
+        \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n
+        \exp \left\{
+          \frac{-1}{\sigma^2} \left( \frac{\mu^2}{2\tau} + \frac{1}{\beta} + \frac{\sum_{i=1}^{n} x_i^2}{2} \right)
+        \right\}
+        \mathbb{I}(\sigma^2>0) \\
+      = &
+        \frac{1}{\sqrt{2\pi\tau\sigma^2}}
+          \exp\left\{
+            \frac{-\left(\theta - (\mu+\tau n \bar{x})(1+n\tau)^{-1}\right)^2}{2\sigma^2(\tau^{-1}+n)^{-1}}
+          \right\} \\
+      & \times
+        \frac{1}{\Gamma(\alpha) \beta^\alpha (\sigma^2)^{\alpha+1}}
+        \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n \\
+      & \times
+        \underbrace{
+          \exp \left\{
+            \frac{-1}{\sigma^2}
+            \left[
+              \left(\frac{\mu^2}{2\tau} + \frac{1}{\beta} + \frac{\sum_{i=1}^{n} x_i^2}{2}\right)
+              - \frac{(\mu + \tau n \bar{x})^2}{2\tau(1 + n \tau)}
+            \right]
+          \right\}
+        }_{A}
+        \mathbb{I}(\sigma^2>0) \\
+      \intertext{Consider the quantity $A$ separately:}
+    A
+      = &
+        \exp \left\{
+          \frac{-1}{\sigma^2}
+          \left[
+            \frac{\mu^2}{2\tau} + \frac{1}{\beta} + \frac{1}{2}\sum_{i=1}^{n} x_i^2
+            - \frac{1}{2}n\bar{x}^2 + \frac{1}{2}n\bar{x}^2
+            - \frac{(\mu + \tau n \bar{x})^2}{2\tau(1 + n \tau)}
+          \right]
+        \right\} \\
+      = &
+        \exp \left\{
+          \frac{-1}{\sigma^2}
+          \left[
+            \frac{\mu^2}{2\tau} + \frac{1}{\beta}
+            + \frac{1}{2}\sum_{i=1}^n\left( x_i - \bar{x} \right)^2
+            + \frac{1}{2}n\bar{x}^2 - \frac{(\mu + \tau n \bar{x})^2}{2\tau(1 + n \tau)}
+          \right]
+        \right\} \\
+      \intertext{where in the last step we used the identity $\sum_{i=1}^n(x_i-\bar{x})^2 = \sum_{i=1}^n x_i^2 - n \bar{x}^2$.  After some simplification:}
+      = &
+        \exp \left\{
+          \frac{-1}{\sigma^2}
+          \left[
+            \frac{\mu^2}{2\tau} + \frac{1}{\beta}
+            + \frac{1}{2}\sum_{i=1}^n\left( x_i - \bar{x} \right)^2
+            + \frac{n\tau(\mu^2 - 2\mu\bar{x} + \bar{x}^2)}{2\tau(1+n\tau)}
+          \right]
+        \right\} \\
+      = &
+        \exp \left\{
+          \frac{-1}{\sigma^2}
+          \left[
+            \frac{\mu^2}{2\tau} + \frac{1}{\beta}
+            + \frac{1}{2}\sum_{i=1}^n\left( x_i - \bar{x} \right)^2
+            + \frac{n(\mu-\bar{x})^2}{2(1+n\tau)}
+          \right]
+        \right\} \\
+      \intertext{Plugging back in for $A$ we have:}
+    \operatorname{\pi}(\theta, \sigma^2 | \mathbf{x}) 
+      \propto &
+        \frac{1}{\sqrt{2\pi\tau\sigma^2}}
+          \exp\left\{
+            \frac{-\left(\theta - (\mu+\tau n \bar{x})(1+n\tau)^{-1}\right)^2}{2\sigma^2(\tau^{-1}+n)^{-1}}
+          \right\} \\
+      & \times
+        \frac{1}{\Gamma(\alpha) \beta^\alpha (\sigma^2)^{\alpha+1}}
+        \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n \\
+      & \times
+        \exp \left\{
+          \frac{-1}{\sigma^2}
+          \left[
+            \frac{\mu^2}{2\tau} + \frac{1}{\beta}
+            + \frac{1}{2}\sum_{i=1}^n\left( x_i - \bar{x} \right)^2
+            + \frac{n(\mu-\bar{x})^2}{2(1+n\tau)}
+          \right]
+        \right\}
+        \mathbb{I}(\sigma^2>0) \\
+      = &  
+        \frac{1}{\sqrt{2\pi\tau\sigma^2}}
+          \exp\left\{
+            \frac{-\left(\theta - (\mu+\tau n \bar{x})(1+n\tau)^{-1}\right)^2}{2\sigma^2(\tau^{-1}+n)^{-1}}
+          \right\} \\
+      & \times
+        \frac{1}{\Gamma(\alpha) \beta^\alpha (\sigma^2)^{\alpha+1}}
+        \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n
+        \exp \left\{
+          \frac{-1}{\sigma^2 \beta'}
+        \right\}
+        \mathbb{I}(\sigma^2>0) \\
+      = &  
+        \frac{1}{\sqrt{2\pi\tau\sigma^2}}
+          \exp\left\{
+            \frac{-\left(\theta - (\mu+\tau n \bar{x})(1+n\tau)^{-1}\right)^2}{2\sigma^2(\tau^{-1}+n)^{-1}}
+          \right\} \\
+      & \times
+        \left( \frac{1}{\sqrt{2\pi}} \right)^n
+        \frac{1}{\Gamma(\alpha) \beta^\alpha (\sigma^2)^{\alpha+\frac{n}{2}+1}}
+        \exp \left\{
+          \frac{-1}{\sigma^2 \beta'}
+        \right\}
+        \mathbb{I}(\sigma^2>0) \\
+  \end{align*}
+The desired kernel for the joint distribution can easily be seen in the last equation.
+\\ \\
+Now consider the distribution of $\theta | \mathbf{X}, \sigma^2$.  Given that
+\begin{align*}
+  \theta | \sigma^2 & \sim N(\mu, \, \tau\sigma^2) \\
+  X | \theta, \sigma^2 & \sim N(\theta, \, \sigma^2)
+\end{align*}
+for a single observation, we know:
+\[ \theta | X, \sigma^2 \sim 
+  N\left(
+    \frac{\tau\sigma^2}{\tau\sigma^2 + \sigma^2}x + \frac{\sigma^2}{\tau\sigma^2 + \sigma^2}\mu, \,
+    \left( \frac{1}{\tau\sigma^2} + \frac{1}{\sigma^2}\right)^{-1}
+  \right) 
+\]
+We can use sufficiency and the fact that $\bar{X}|\theta \sim N(\theta, \, \frac{\sigma^2}{n})$ to find $\theta|\mathbf{X}, \sigma^2$:
+\[ \theta | \bar{X}, \sigma^2 \sim 
+  N\left(
+    \frac{\tau\sigma^2}{\tau\sigma^2 + \sigma^2/n}x + \frac{\sigma^2/n}{\tau\sigma^2 + \sigma^2/n}\mu, \,
+    \left( \frac{1}{\tau\sigma^2} + \frac{1}{\sigma^2/n}\right)^{-1}
+  \right) 
+\]
+And after a bit of simplification:
+\[ \theta | \bar{X}, \sigma^2 \sim 
+  N\left(
+    (n\tau\bar{x} + \mu)(n\tau + 1)^{-1}, \,
+    \sigma^2(\tau^{-1} + n)
+  \right) 
+\]
+which is the desired density for $\operatorname{\pi}_1(\theta | \sigma^2, \, \mathbf{x})$.  The density of $\operatorname{\pi}_2(\sigma^2|\mathbf{x})$ is shown in part (b).
+\item %#3-b
+  Let $u(\mathbf{x}) = (\mu + n\tau\bar x)/(n\tau+1)$, $\sigma_1^2 = (\tau^{-1}+n)^{-1} \sigma^2$, and $\alpha' = \alpha+n/2$.  Then:
+  \begin{IEEEeqnarray*}{rCl}
+    \operatorname{\pi}(\theta, \sigma^2 | \mathbf{x}) & = & \operatorname{\pi_2}(\sigma^2 | \mathbf{x} )
+                                                                                           \operatorname{\pi_1}(\theta | \mathbf{x}, \sigma^2 ) \\
+                                                                                 & = & \frac{1}{\operatorname{ \Gamma}(\alpha') \beta'^{\alpha'} (\sigma^2)^{\alpha'+1} }
+                                                                                           \exp \left\{ \frac{-1}{\sigma^2 \beta'} \right\}
+                                                                                           \mathbb{I}(\sigma^2>0)
+                                                                                           \frac{1}{ \sqrt{ 2 \pi \sigma_1^2} }
+                                                                                           \exp\left\{ \frac{-(\theta - \mu(\mathbf{x}))^2}{2\sigma_1^2} \right\} \\
+    \operatorname{\pi}(\sigma^2 | \mathbf{x}) & = & \frac{1}{\operatorname{ \Gamma}(\alpha') \beta'^{\alpha'} (\sigma^2)^{\alpha'+1} }
+                                                                                           \exp \left\{ \frac{-1}{\sigma^2 \beta'} \right\}
+                                                                                           \mathbb{I}(\sigma^2>0)
+                                                                                           \underbrace{
+                                                                                             \int_{-\infty}^\infty 
+                                                                                               \frac{1}{ \sqrt{ 2 \pi \sigma_1^2} }
+                                                                                               \exp\left\{ \frac{-(\theta - \mu(\mathbf{x}))^2}{2\sigma_1^2} \right\}
+                                                                                             \, d\theta
+                                                                                           }_{ \text{ =1; } \operatorname{N}(\mu(\mathbf{x}), \, \sigma_1^2) } \\
+                                                                       & = & \frac{1}{\operatorname{ \Gamma}(\alpha') \beta'^{\alpha'} (\sigma^2)^{\alpha'+1} }
+                                                                                           \exp \left\{ \frac{-1}{\sigma^2 \beta'} \right\}
+                                                                                           \mathbb{I}(\sigma^2>0) \\
+                                                                       & = & \frac{1}{\operatorname{ \Gamma}(\alpha + \frac{n}{2}) \beta'^{\alpha + \frac{n}{2}} (\sigma^2)^{\alpha + \frac{n}{2}+1} }
+                                                                                           \exp \left\{ \frac{-1}{\sigma^2 \beta'} \right\}
+                                                                                           \mathbb{I}(\sigma^2>0)
+  \end{IEEEeqnarray*}
+  From the pdf we can see that $\sigma^2 | \mathbf{X} \sim \operatorname{IG}(\alpha + n/2, \beta')$
+\item %#3-c
+Again let $\mu(\mathbf{x}) = (\mu + n\tau\bar x)/(n\tau+1)$ and $\alpha' = \alpha+n/2$.  Also let $\omega = (\tau^{-1} +n)^{-1}$
+We are given:
+\[
+  \operatorname{\pi}(\theta, \sigma^2|\mathbf{x})
+    = 
+      \frac{1}{\sqrt{2\pi\omega\sigma^2}}
+      \exp \left\{
+        \frac{-(\theta-\mu(\mathbf{x}))^2}{2\omega\sigma^2}
+      \right\}
+      \frac{1}{\Gamma(\alpha') \beta'^{\alpha'} (\sigma^2)^{\alpha'+1}}
+      \exp \left\{
+        \frac{-1}{\sigma^2 \beta'}
+      \right\}
+      \mathbb{I}(\sigma^2>0)
+\]
+We integrate out $\sigma^2$ to get the marginal distribution for $\theta$ given $\mathbf{x}$:
+\begin{align*}
+  \operatorname{\pi}(\theta|\mathbf{x})
+    = &
+      \int_0^\infty
+      \frac{1}{\sqrt{2\pi\omega\sigma^2}}
+      \exp \left\{
+        \frac{-(\theta-\mu(\mathbf{x}))^2}{2\omega\sigma^2}
+      \right\}
+      \frac{1}{\Gamma(\alpha') \beta'^{\alpha'} (\sigma^2)^{\alpha'+1}}
+      \exp \left\{
+        \frac{-1}{\sigma^2 \beta'}
+      \right\}
+      \, d\sigma^2 \\
+    = &
+      \frac{
+        \Gamma(\alpha'+\frac{1}{2})
+        \left[
+          \left(
+            \frac{(\theta-\mu(\mathbf{x}))^2}{2\omega} + \frac{1}{\beta'}
+          \right)^{-1}
+        \right]^{\alpha'+\frac{1}{2}}}
+      {
+        \sqrt{2\pi\omega} \Gamma(\alpha') \beta'^{\alpha'}
+      } \\
+    & \times
+      \underbrace{
+        \int_0^\infty
+        \frac{1}{
+          \Gamma(\alpha'+\frac{1}{2})
+          \left[
+            \left(
+              \frac{(\theta-\mu(\mathbf{x}))^2}{2\omega} + \frac{1}{\beta'}
+            \right)^{-1}
+          \right]^{\alpha'+\frac{1}{2}}
+        }
+        \frac{1}{(\sigma^2)^{\alpha' + \frac{1}{2} + 1}}
+        \exp \left\{
+          \frac{-1}{\sigma^2}
+          \left(
+            \frac{\left( \theta-\mu(\mathbf{x}) \right)^2}{2\omega}
+          \right)
+        \right\} \, d\sigma^2
+      }_{\text{=1; } \operatorname{IG}\left(\alpha' + 1/2, \, (2\omega)/((\theta-\mu(\mathbf{x}))^2)\right)} \\
+    = &
+      \frac{
+        \Gamma(\alpha'+\frac{1}{2})
+        \left[
+          \frac{(\theta-\mu(\mathbf{x}))^2}{2\omega {\beta'}^{-1}} + 1
+        \right]^{-\alpha'-\frac{1}{2}}
+        \left(
+          \frac{1}{\beta'}
+        \right)^{-\alpha'-\frac{1}{2}}
+      }
+      {
+        \sqrt{2\pi\omega} \Gamma(\alpha') {\beta'}^{\alpha'}
+      } \\      
+    = &
+      \frac{
+        \Gamma(\alpha'+\frac{1}{2})
+        \left[
+          \frac{(\theta-\mu(\mathbf{x}))^2}{2\omega {\beta'}^{-1}} + 1
+        \right]^{-\alpha'-\frac{1}{2}}
+      }
+      {
+        \sqrt{2\pi\omega} \Gamma(\alpha') {\beta'}^{-\frac{1}{2}}
+      } \\   
+    = &
+      \frac{
+        \Gamma(\alpha'+\frac{1}{2})
+        \left[
+          \frac{(\theta-\mu(\mathbf{x}))^2}{2\omega {\beta'}^{-1}\alpha' {\alpha'}^{-1} } + 1
+        \right]^{-\alpha'-\frac{1}{2}}
+      }
+      {
+        \sqrt{2 \pi \omega {\beta'}^{-1} \alpha' {\alpha'}^{-1}} \Gamma(\alpha')
+      } \\
+    \intertext{Plugging in for $\alpha'$ and $\omega$:}
+    = &
+      \frac{
+        \Gamma\left(\alpha+\frac{n}{2}+\frac{1}{2}\right)
+        \left[
+          \frac{(\theta-\mu(\mathbf{x}))^2}{2 (\tau^{-1} +n)^{-1} {\beta'}^{-1}(\alpha+\frac{n}{2}){(\alpha+\frac{n}{2})}^{-1} } + 1
+        \right]^{-\left(\alpha+\frac{n}{2}\right)-\frac{1}{2}}
+      }
+      {
+        \sqrt{2 \pi (\tau^{-1} +n)^{-1} {\beta'}^{-1} (\alpha+\frac{n}{2}){(\alpha+\frac{n}{2})}^{-1}}
+        \Gamma\left(\alpha+\frac{n}{2}\right)
+      } \\
+    = &
+      \frac{
+        \Gamma\left(
+          \frac{2\alpha + n + 1}{2}
+        \right)
+        \left[
+          \frac{
+            (\theta-\mu(\mathbf{x}))^2
+          }
+          {
+            (2\alpha + n)\left[ (\tau^{-1}+n)(\alpha+\frac{n}{2})\beta' \right]^{-1}
+          } + 1
+          \right]^{-\left( \frac{2\alpha + n + 1}{2} \right)}
+      }
+      {
+        \left[
+          (2\alpha+n)\pi \left[ (\tau^{-1} + n)(\alpha+\frac{n}{2}) \beta' \right]^{-1}
+        \right]^{\frac{1}{2}}
+        \Gamma\left(
+          \frac{2\alpha + n}{2}
+        \right)
+      }
+\end{align*}
+which is the density of $t( 2\alpha + n, \, \mu(\mathbf{x}), \, [(\tau^{-1} + n)(\alpha + n/2)\beta']^{-1})$ as desired.
+\item %#3-d
+The joint prior density in this problem is from a conjugate family for the distribution of $\mathbf{X}$ because $\pi_1(\theta|\sigma^2)$ is in the same family as $\pi_1(\theta|\sigma^2, \mathbf{x})$, and $\pi_2(\sigma^2)$ is in the same family as $\pi_2(\sigma^2 | \mathbf{x})$.
+\enum
+
+\item %#4
+\bnum 
+\item %#4-a
+\item %#4-b
+\item %#4-c
+\item %#4-d
+\enum
+
+\item %#5
+\item %#6
+  $\frac{1}{\sigma^2} \sim \operatorname{Ga}(\frac{r}{2}, \frac{2}{r})$ implies $\sigma^2 \sim \operatorname{IG}(\frac{r}{2}, \frac{2}{r})$
+  \begin{IEEEeqnarray*}{rCl}
+    \operatorname{m}(x) & = & \int_0^\infty \operatorname{f}(x|\sigma^2) \operatorname{\pi}(\sigma^2) \, d\sigma^2 \\
+                                      & = & \int_0^\infty \frac{ 1 }{ \sqrt{2\pi\sigma^2} }  \exp\left\{ \frac{-x^2}{2\sigma^2} \right\}
+                                                  \frac{1}{\operatorname{\Gamma} \left( \frac{r}{2} \right) \left( \sigma^2 \right)^{\frac{r}{2} +1 } } 
+                                                  \exp\left\{ \frac{-1}{\sigma^2 \left( \frac{2}{r} \right) } \right\} \, d\sigma^2 \\
+                                      & = & \frac{
+                                                         \operatorname{\Gamma} \left( \frac{r}{2} + \frac{1}{2} \right)
+                                                         \left( \frac{x^2}{2} + \frac{r}{2} \right)^{-\frac{r}{2} - \frac{1}{2}}
+                                                       }
+                                                       {
+                                                         \operatorname{\Gamma}\left( \frac{r}{2} \right) 
+                                                         \left( \frac{2}{r} \right)^{ \frac{r}{2} } \left( 2 \pi \right)^{\frac{1}{2}}
+                                                       }
+                                                       \underbrace{
+                                                          \int_0^\infty
+                                                           \frac{
+                                                                    1
+                                                                  }
+                                                                  {
+                                                                    \operatorname{\Gamma} \left( \frac{r}{2} + \frac{1}{2} \right)
+                                                                    \left( \frac{x^2}{2} + \frac{r}{2} \right)^{-\frac{r}{2} - \frac{1}{2}}
+                                                                  }
+                                                           \frac{1}{ (\sigma^2)^{\frac{r}{2} + \frac{1}{2} + 1 } }
+                                                           \exp\left\{ \frac{-1}{\sigma^2} \left( \frac{x^2}{2} + 
+                                                           \frac{r}{2} \right) \right\}
+                                                         \, d\sigma^2
+                                                         }_{\text{=1; } \operatorname{IG}\left(\frac{r}{2} + \frac{1}{2}, \left(\frac{x^2}{2} + \frac{r}{2}\right)^{-1} \right)} \\
+                                       & = & \frac{
+                                                          \operatorname{\Gamma}\left( \frac{r+1}{2} \right) \left( \frac{\frac{x^2}{r} + 1}{\frac{2}{r}} \right)^{-\frac{r}{2} - \frac{1}{2}}
+                                                         }
+                                                         {
+                                                           \operatorname{\Gamma}\left( \frac{r}{2} \right) \left( \frac{2}{r} \right)^{\frac{r}{2}} \left( 2\pi \right)^{\frac{1}{2}}
+                                                         } \\
+                                       & = & \frac{
+                                                          \operatorname{\Gamma}\left( \frac{r+1}{2} \right) \left( \frac{x^2}{r} + 1\right)^{-\frac{r}{2} - \frac{1}{2}} 
+                                                          \left( \frac{2}{r} \right)^{\frac{r}{2} + \frac{1}{2}} 
+                                                        }
+                                                        {
+                                                          \operatorname{\Gamma}\left( \frac{r}{2} \right) \left( \frac{2}{r} \right)^{\frac{r}{2}} \left( 2\pi \right)^{\frac{1}{2}}
+                                                        } \\
+                                       & = & \frac{
+                                                          \operatorname{\Gamma}\left( \frac{r+1}{2} \right) \left( \frac{x^2}{r} + 1\right)^{-\left( \frac{r + 1}{2} \right)} 
+                                                        }
+                                                        {
+                                                          \operatorname{\Gamma}\left( \frac{r}{2} \right) \left( \frac{2}{r} \right)^{-\frac{1}{2}} \left( 2\pi \right)^{\frac{1}{2}}
+                                                        } \\
+                                       & = & \frac{
+                                                          \operatorname{\Gamma}\left( \frac{r+1}{2} \right) \left( \frac{x^2}{r} + 1\right)^{-\left( \frac{r + 1}{2} \right)} 
+                                                        }
+                                                        {
+                                                          \operatorname{\Gamma}\left( \frac{r}{2} \right) \left( r\pi \right)^{\frac{1}{2}}
+                                                        }
+  \end{IEEEeqnarray*}
+  This is the pdf for a $t$-distribution with $r$ degrees of freedom
+\item %#7
+
+\enum
+
+
+
+% ===========================================================================
+
+\end{document}
