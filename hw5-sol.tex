@@ -544,7 +544,7 @@ To calculate the posterior mean and variance we must first find the posterior. \
 & \propto \theta^{x} (1-\theta)^{n-x} \theta^{\alpha-1}(1-\theta)^{\beta-1}  \\
 & \propto \theta^{\alpha+x-1}(1-\theta)^{\beta+n-x-1}
 \end{align*}
-Which is the kernal of a $\beta(\alpha+x,\beta+n-x-1)$ distribution.  Therefore, the $E[\theta|X]$ and $Var(\theta|X)$ are known.
+Which is the kernal of a $\beta(\alpha+x,\beta+n-x)$ distribution.  Therefore, the $E[\theta|X]$ and $Var(\theta|X)$ are known.
 
 
 \begin{align*}
@@ -605,7 +605,9 @@ To find the MAP, we need to maximize the posterior ($\pi(\theta|x)$). Here the m
 \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right) &= 0+0+\frac{x+\alpha-1}{\theta}-\frac{\beta+n-x-1}{1-\theta} \\
 \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right) &=\frac{x+\alpha-1}{\theta}-\frac{\beta+n-x-1}{1-\theta}
 \end{align*}
-Then , for this case $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$=0 is indeed a maximum.  
+Then , to determine if $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$=0 is indeed a maximum consider the $\lim \limits_{\theta \to 1} \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$.  Here the first term becomes non-important as the second term goes to either $\pm \infty$.  Since the denominator is positive, then the sign of $-\frac{\beta+n-x-1}{1-\theta}$ is determined by the numerator. In the case $n=x$, the numerator could be negative.  Otherwise, the numerator $\beta+n-x-1>0$ and $\lim \limits_{\theta \to 1} \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)=-\infty$.  Consider the $\lim \limits_{\theta \to 0} \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$.  Here the second term becomes non-important as the first term goes to either $\pm \infty$.  Since the denominator is positive, then the sign of $\frac{x+\alpha-1}{\theta}$ is determined by the numerator. In the case $x=0$, the numerator could be negative.  Otherwise, the numerator $x+\alpha-1>0$ and $\lim \limits_{\theta \to 0} \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)=\infty$.  Therefore, if $x \neq 0$ and $n \neq x$ then $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)>0$ until the critical point and $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)<0$ after the critical point.  Therefore, the critical point is a maximum.  If $x=0$, there were 0 successes and it is an extreme case and the MAP will be $\theta=0$.  If $n=x$ there were n successes and it is an extreme case and the MAP will be $\theta=1$.  However, since those cases are not computationally difficult, we will continue assuming that the aforementioned are not the case.
+
+
 \begin{align*}
 0 &=\frac{x+\alpha-1}{\hat{\theta}_{MAP}}-\frac{\beta+n-x-1}{1-\hat{\theta}_{MAP}} \\
 0 &=(x+\alpha-1)(1-\hat{\theta}_{MAP})-(\beta+n-x-1)(\hat{\theta}_{MAP}) \\
@@ -630,7 +632,7 @@ To find the MAP, we need to maximize the posterior ($\pi(\theta|x)$). Here the m
 \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right) &= 0+\frac{-\alpha-n-1}{\theta}+\frac{\sum_{i=1}^{n} x_i+\beta}{\theta^2} \\
 \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right) &=-\frac{\alpha+n+1}{\theta}+\frac{\sum_{i=1}^{n} x_i+\beta}{\theta^2}
 \end{align*}
-Then , for this case $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$=0 is indeed a maximum.  
+Then , for this case $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$=0 is indeed a maximum.  Again, this can determined by the limits of $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$.  As $\theta \to \infty$ the first term dominates $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$.  Since the first term is negative, $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)<0$ for values above the critical point.  As $\theta \to 0$ the second term dominates $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$.  Since the second term is positive, $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)>0$ for values lower than the critical point. Therefore the critical point is a maximum.  
 \begin{align*}
 0 &=-\frac{\alpha+n+1}{\hat{\theta}_{MAP}}+\frac{\sum_{i=1}^{n} x_i+\beta}{\hat{\theta}_{MAP}^2} \\
 (\alpha+n+1)(\hat{\theta}_{MAP}) &=\sum_{i=1}^{n} x_i+\beta \\
@@ -653,18 +655,18 @@ To find the MAP, we need to maximize the posterior ($\pi(\theta|x)$). Here the m
 \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right) &= 0+\frac{x+2\beta}{2\theta^2} -\frac{\alpha+n/2+1}{\theta}  \\
 \frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right) &= \frac{x+2\beta}{2\theta^2} -\frac{\alpha+n/2+1}{\theta}
 \end{align*}
-Then , for this case $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$=0 is indeed a maximum.  
+Then , for this case $\frac{\partial}{\partial \theta} \left( \ln [\pi(\theta|X)] \right)$=0 is indeed a maximum.  The argument follows exactly the same as part B since the first term is positive $\forall$ $\theta$ and the second term is negative $\forall$ $\theta$.  
 \begin{align*}
 0 &=\frac{x+2\beta}{2\hat{\theta}_{MAP}^2} -\frac{\alpha+n/2+1}{\hat{\theta}_{MAP}}\\
 \frac{\alpha+n/2+1}{\hat{\theta}_{MAP}}&=\frac{x+2\beta}{2\hat{\theta}_{MAP}^2}\\
-(2\alpha+m+2)(\hat{\theta}_{MAP}) &= x+2\beta \\
-\hat{\theta}_{MAP}&=\frac{x+2\beta}{2\alpha+m+2}
+(2\alpha+n+2)(\hat{\theta}_{MAP}) &= x+2\beta \\
+\hat{\theta}_{MAP}&=\frac{x+2\beta}{2\alpha+n+2}
 \end{align*}
 It was given that $Var(\hat{\theta}_{MAP})=E[(\hat{\theta}_{MAP}-\theta))^2|X]=E[(\hat{\theta}_{MAP}-E(\theta|X))^2|X]+Var(\theta|X)$ and $E(\theta|X)$ and $Var(\theta|X)$ were found in 4.5 and 4.6. 
 \begin{align*}
 Var(\hat{\theta}_{MAP}) &= E\left[(\hat{\theta}_{MAP}-E(\theta|X))^2|X\right]+Var\left(\theta|X\right) \\
-Var(\hat{\theta}_{MAP}) &= E \left[ \left( \frac{x+2\beta}{2\alpha+m+2} -\frac{x/2+\beta}{\alpha+n/2-1} \right)^2 |X \right]+\frac{x/2+\beta}{(\alpha+n/2-1)^2(\alpha+n/2-2)}  \\
-Var(\hat{\theta}_{MAP}) &=  \left( \frac{x+2\beta}{2\alpha+m+2} -\frac{x/2+\beta}{\alpha+n/2-1} \right)^2 +\frac{x/2+\beta}{(\alpha+n/2-1)^2(\alpha+n/2-2)} 
+Var(\hat{\theta}_{MAP}) &= E \left[ \left( \frac{x+2\beta}{2\alpha+n+2} -\frac{x/2+\beta}{\alpha+n/2-1} \right)^2 |X \right]+\frac{x/2+\beta}{(\alpha+n/2-1)^2(\alpha+n/2-2)}  \\
+Var(\hat{\theta}_{MAP}) &=  \left( \frac{x+2\beta}{2\alpha+n+2} -\frac{x/2+\beta}{\alpha+n/2-1} \right)^2 +\frac{x/2+\beta}{(\alpha+n/2-1)^2(\alpha+n/2-2)} 
 \end{align*}
 
 
